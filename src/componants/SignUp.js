@@ -34,7 +34,7 @@ const SignUp = () => {
   }
   return (
     <div className='register'>
-    <h1 style={{marginLeft: "126px"}}>Register</h1>
+    <h1>Register</h1>
         <input className="inputText" value={name} onChange={(e)=>setname(e.target.value)} type="text" placeholder='Enter name'></input>
         <input className="inputText" value={email} onChange={(e)=>setEmail(e.target.value)} type="text" placeholder='Enter Email'></input>
         <input className="inputText" value={password} onChange={(e)=>setPassword(e.target.value)} type="password" placeholder='Enter password'></input>
