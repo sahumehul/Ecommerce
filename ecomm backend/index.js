@@ -5,6 +5,7 @@ const User = require("./db/user");
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcrypt");
 const app = express();
+require('dotenv').config();
 app.use(express.json());
 app.use(cors())
 
@@ -49,7 +50,7 @@ app.post("/login",(req,res)=>{
                         email : loginuser.email,
                         id : loginuser._id
                     },
-                    "Mehulsahu",{
+                    process.env.SECRET_KEY,{
                         expiresIn : "24h"
                     })
                     res.status(200).json({
@@ -66,7 +67,7 @@ app.post("/login",(req,res)=>{
             })
         }else{
             res.status(401).json({
-                message : "password required"
+                message : "email is not registered with us"
             })
         }
     }).catch(err=>{
@@ -77,4 +78,4 @@ app.post("/login",(req,res)=>{
     })
 })
 
-app.listen(5000)
+app.listen(process.env.PORT)
