@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-// import logo from './e-comm.jpg'
 import "./Nav.css"
 
 export const Nav = () => {
